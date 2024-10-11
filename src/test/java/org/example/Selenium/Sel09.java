@@ -14,7 +14,7 @@ public class Sel09 {
         driver.get("https://bing.com");
 
         driver.navigate().to("https://app.vwo.com");
-        driver.navigate().to(new URL("https://google.com"));
+        driver.navigate().to(new URL("x"));
         driver.navigate().back();
         driver.navigate().forward();
         driver.navigate().refresh();
