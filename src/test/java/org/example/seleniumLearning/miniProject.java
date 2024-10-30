@@ -12,7 +12,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class practise {
+public class miniProject {
     EdgeDriver driver;
 
     @BeforeTest
@@ -57,18 +57,22 @@ public class practise {
         Assert.assertEquals(result,"Appointment Confirmation" );
         System.out.println(result);
 
+        String comment_msg = driver.findElement(By.id("comment")).getText();
+        Assert.assertEquals(comment_msg, "Hello Automation");
+        System.out.println(comment_msg);
 
         Thread.sleep(2000);
 }
 
 
-@AfterTest
+
+
+
+
+
+    @AfterTest
     public void closeBrowser(){
         driver.quit();
-}
-
-
-
-
+    }
 
 }
