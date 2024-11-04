@@ -1,18 +1,17 @@
 package org.example.SVG;
 
 import io.qameta.allure.Description;
-import org.openqa.selenium.By;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.List;
+import javax.swing.*;
 
-public class Sel30 {
+public class Sel32 {
 
     EdgeDriver driver;
 
@@ -28,25 +27,24 @@ public class Sel30 {
     @Test(groups = "QA")
     @Description("Test Case Description")
     public void testPositive() throws InterruptedException {
-        String URL = "https://www.amcharts.com/svg-maps/?map=india";
+        String URL = "https://awesomeqa.com/practice.html";
         driver.get(URL);
         driver.manage().window().maximize();
 
-        List<WebElement> states = driver.findElements(By.xpath("//*[name()='svg']/*[name()='g'][7]/*[name()='g']/*[name()='g']/*[name()='path']"));
+        WebElement frstName = driver.findElement(By.name("firstname"));
 
-        for (WebElement state: states){
-            System.out.println(state.getAttribute("aria-label"));
-//            if(state.getAttribute("aria-label").contains("Tripura")){
-//                state.click();
+        Actions actions = new Actions(driver);
+        actions.keyDown(Keys.SHIFT)
+                .sendKeys(frstName, "Maruf")
+                .keyUp(Keys.SHIFT).build().perform();
 
-            if (state.getAttribute("aria-label").contains("Tripura")){
-                state.click();
+        Thread.sleep(3000);
 
-            }
-        }
-
+        WebElement link = driver.findElement(By.xpath("//a[contains(text(), 'Click here to Download File')]"));
+        actions.contextClick(link).build().perform();
 
 
+        Thread.sleep(3000);
 
 
 
