@@ -2,6 +2,7 @@ package org.example.SVG;
 
 import io.qameta.allure.Description;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -12,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class Sel30 {
+public class Sel31 {
 
     EdgeDriver driver;
 
@@ -28,23 +29,23 @@ public class Sel30 {
     @Test(groups = "QA")
     @Description("Test Case Description")
     public void testPositive() throws InterruptedException {
-        String URL = "https://www.amcharts.com/svg-maps/?map=india";
+        String URL = "https://selectorshub.com/xpath-practice-page/";
         driver.get(URL);
         driver.manage().window().maximize();
 
-        List<WebElement> states = driver.findElements(By.xpath("//*[name()='svg']/*[name()='g'][7]/*[name()='g']/*[name()='g']/*[name()='path']"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        for (WebElement state: states){
-            System.out.println(state.getAttribute("aria-label"));
-//            if(state.getAttribute("aria-label").contains("Tripura")){
-//                state.click();
+//        driver.findElement(By.xpath("//input[@id=\"pizza\"]")).sendKeys("It will not work");
 
-            if (state.getAttribute("aria-label").contains("Tripura")){
-                state.click();
+        WebElement divScrollTo = driver.findElement(By.xpath("//div[@id='userName']"));
+        js.executeScript("arguments[0].scrollIntoView(true);",divScrollTo);
 
-            }
-        }
+        Thread.sleep(3000);
 
+        WebElement inputboxPizza = (WebElement) js.executeScript("return document.querySelector(\"div#userName\").shadowRoot.querySelector(\"div\").shadowRoot.querySelector(\"input#pizza\")");
+        inputboxPizza.sendKeys("Farmhouse");
+
+        Thread.sleep(13000);
 
 
 
