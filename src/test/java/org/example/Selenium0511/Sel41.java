@@ -6,14 +6,13 @@
     import org.openqa.selenium.WebElement;
     import org.openqa.selenium.edge.EdgeDriver;
     import org.openqa.selenium.edge.EdgeOptions;
-    import org.openqa.selenium.interactions.Actions;
     import org.testng.annotations.AfterTest;
     import org.testng.annotations.BeforeTest;
     import org.testng.annotations.Test;
 
-    import java.util.Set;
+    import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
-    public class Sel38 {
+    public class Sel41 {
 
         EdgeDriver driver;
         @BeforeTest
@@ -31,31 +30,11 @@
         @Test(groups = "QA")
         @Description("Test Case Description")
         public void testPositive() throws InterruptedException {
-            String URL = "https://the-internet.herokuapp.com/windows";
+            String URL = "https://www.aqi.in/real-time-most-polluted-city-ranking";
             driver.get(URL);
             driver.manage().window().maximize();
 
 
-            String mainWindowHandle = driver.getWindowHandle();
-            System.out.println("Before Click" + mainWindowHandle);
-            WebElement link = driver.findElement(By.xpath("//a[contains(text(),'Click Here')]"));
-            link.click();
-
-            Set<String> windowHandles = driver.getWindowHandles();
-
-            for (String handle: windowHandles){
-                driver.switchTo().window(handle);
-
-                System.out.println(handle);
-                if (driver.getPageSource().contains("New Window")){
-                    System.out.println("Test Case Passed");
-                }
-            }
-
-            Thread.sleep(3000);
-
-
-            driver.switchTo().window(mainWindowHandle);
 
 
 
@@ -67,7 +46,10 @@
 
 
 
-            Thread.sleep(3000);
+
+
+
+            Thread.sleep(13000);
 
 
 
