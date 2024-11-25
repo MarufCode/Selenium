@@ -36,10 +36,12 @@ public class checkBox {
         List<WebElement> checkboxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
         WebElement ch1 = checkboxes.get(0);
         ch1.click();
+        Thread.sleep(5000);
 
         String text = driver.findElement(By.xpath("//a[contains(text(),'Elemental Selenium')]")).getText();
         Assert.assertEquals(text, "Elemental Selenium");
         System.out.println(text);
+        Thread.sleep(5000);
 
     }
 
