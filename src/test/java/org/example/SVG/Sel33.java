@@ -36,8 +36,6 @@ public class Sel33 {
         driver.manage().window().maximize();
         Thread.sleep(3000);
 
-        // THETESTINGACADEMY
-        // Shift Keydown -> thtestingacademy + Shift KeyUp
 
         WebElement source = driver.findElement(By.xpath("//div[@data-testid='to-testID-origin']/div/div/input"));
 
