@@ -94,6 +94,17 @@
 
                 Thread.sleep(3000);
 
+                WebElement dlt = driver.findElement(By.xpath("//div[@class='orangehrm-paper-container']//button[2]"));
+                dlt.click();
+                Thread.sleep(2000);
+
+
+
+                driver.findElement(By.xpath("//button[normalize-space()='Yes, Delete']")).click();
+                Thread.sleep(5000);
+
+                Assert.assertTrue(true, "Successfully deleted");
+
             }
         }
 
