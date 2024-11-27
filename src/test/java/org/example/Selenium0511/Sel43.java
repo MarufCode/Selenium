@@ -1,10 +1,7 @@
     package org.example.Selenium0511;
 
     import io.qameta.allure.Description;
-    import org.openqa.selenium.By;
-    import org.openqa.selenium.Keys;
-    import org.openqa.selenium.PageLoadStrategy;
-    import org.openqa.selenium.WebElement;
+    import org.openqa.selenium.*;
     import org.openqa.selenium.edge.EdgeDriver;
     import org.openqa.selenium.edge.EdgeOptions;
     import org.testng.Assert;
@@ -12,11 +9,9 @@
     import org.testng.annotations.BeforeTest;
     import org.testng.annotations.Test;
 
-    import java.util.List;
-
     import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
-    public class frameExample {
+    public class Sel43 {
 
         EdgeDriver driver;
         @BeforeTest
@@ -29,27 +24,31 @@
 
 
 
+
+
         @Test(groups = "QA")
         @Description("Test Case Description")
         public void testPositive() throws InterruptedException {
-            String URL = "https://codepen.io/AbdullahSajjad/full/LYGVRgK";
-            driver.get(URL);
-            driver.manage().window().maximize();
 
-            Thread.sleep(5000);
+            try {
+                driver.manage().window().maximize();
+                driver.get("https://www.google.com/");
 
-            driver.switchTo().frame("result");
+                WebElement element = driver.findElement(By.xpath("//textarea[@title=\"Search\"]"));
+                driver.navigate().refresh();
+                WebElement element1 = driver.findElement(By.xpath("//textarea[@title=\"Search\"]"));
+                element1.sendKeys("https://github.com/MarufCode" + Keys.ENTER);
+                Thread.sleep(3000);
 
-            WebElement submit = driver.findElement(By.xpath("//button[contains(text(),'Submit')]"));
-            submit.click();
 
-            WebElement username = driver.findElement(By.id("username"));
-            WebElement errElement = driver.findElement(with(By.tagName("small")).below(username));
+                // driver.switchTo().frame(1);
+                //driver.switchTo().alert().accept();
 
-            String errText = errElement.getText();
-
-            Assert.assertEquals(errText, "Username must be at least 3 characters");
-            Thread.sleep(5000);
+            }catch (StaleElementReferenceException | NoSuchElementException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
 
 
