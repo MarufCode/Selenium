@@ -89,7 +89,7 @@
                 Assert.assertEquals(recordParts[2], expectedLastName, "Last Name does not match");
 
                 System.out.println("All assertions passed. Data verified successfully.");
-            } catch (AssertionError e) {
+             } catch (AssertionError e) {
                 System.out.println("Assertion failed: " + e.getMessage());
 
                 Thread.sleep(3000);

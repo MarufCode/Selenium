@@ -98,7 +98,7 @@ public class FileUploadScenarioForMultiUsers {
         // C:\Users\Maruf.sherikar.EXT.SVKMGRP\IdeaProjects\Selenium\src\test\java\org\example\Selenium0511\Accommodation_Operations-Semester_III-SynopticsTemplate.docx
 
 
-//
+
 //        List<WebElement> checkboxes = driver.findElements(By.xpath("//input[@type='checkbox']"));
 //        WebElement ch1 = checkboxes.get(0);
 //        ch1.click();
