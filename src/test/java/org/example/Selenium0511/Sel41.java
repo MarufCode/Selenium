@@ -7,10 +7,13 @@
     import org.openqa.selenium.WebElement;
     import org.openqa.selenium.edge.EdgeDriver;
     import org.openqa.selenium.edge.EdgeOptions;
+    import org.openqa.selenium.support.ui.ExpectedConditions;
+    import org.openqa.selenium.support.ui.WebDriverWait;
     import org.testng.annotations.AfterTest;
     import org.testng.annotations.BeforeTest;
     import org.testng.annotations.Test;
 
+    import java.time.Duration;
     import java.util.List;
 
     import static org.openqa.selenium.support.locators.RelativeLocator.with;
@@ -58,10 +61,9 @@
                     }
 
 
-
-
-
-
+                    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+                    WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("")));
+                    element.click();
 
 
 

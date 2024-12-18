@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/Maruf.sherikar.EXT.SVKMGRP/IdeaProjects/Selenium">
         <classes>
-            <class name="org.example.Selenium.Sel010">
+            <class name="org.example.Selenium0511.QPUloadMultiBrowserTC">
 
             </class>
         </classes>

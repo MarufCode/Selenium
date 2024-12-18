@@ -9,6 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 //import org.openqa.selenium.opera.OperaDriver;
 //import org.openqa.selenium.opera.OperaOptions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,6 +22,14 @@ public class QPUloadMultiBrowserTC {
 
 
     WebDriver driver;
+
+
+
+//    public static WebDriver driver;
+//    public static WebDriver getDriver(){
+//        return driver;
+//    }
+
 
     @BeforeTest
     @Parameters("browser")
@@ -45,7 +54,9 @@ public class QPUloadMultiBrowserTC {
         }
     }
 
-        @Test(groups = "QA")
+
+
+    @Test(groups = "QA")
         @Description("Test Case of File Upload for multiple users request")
         public void testPositive() throws InterruptedException {
 
@@ -93,7 +104,8 @@ public class QPUloadMultiBrowserTC {
             actions.sendKeys(Keys.PAGE_DOWN).build().perform();
             Thread.sleep(1000);
 
-            // Add file upload and other actions here (same as your script)
+
+            // Add file upload and other actions here
 
             for (int i = 1; i <= 10; i++) {
                 System.out.println("Starting upload iteration: " + i);
@@ -173,6 +185,9 @@ public class QPUloadMultiBrowserTC {
                 driver.quit();
 
             }
+
+
+
 
 
 }
