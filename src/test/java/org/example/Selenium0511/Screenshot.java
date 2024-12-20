@@ -2,16 +2,17 @@ package org.example.Selenium0511;
 
 import io.qameta.allure.Description;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 public class Screenshot {
 
@@ -48,6 +49,13 @@ public class Screenshot {
         System.out.println("Screenshot saved successfully!");
 
         System.out.println("Screenshot saved at: " + destinationFile.getAbsolutePath());
+
+        driver.quit();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
+        ele.click();
+
 
 
 

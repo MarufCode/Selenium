@@ -22,6 +22,7 @@
             EdgeOptions options = new EdgeOptions();
             options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
             options.addArguments("--guest");
+            options.addArguments("--incognito");
             driver = new EdgeDriver(options);
         }
 
@@ -97,7 +98,6 @@
                 WebElement dlt = driver.findElement(By.xpath("//div[@class='orangehrm-paper-container']//button[2]"));
                 dlt.click();
                 Thread.sleep(2000);
-
 
 
                 driver.findElement(By.xpath("//button[normalize-space()='Yes, Delete']")).click();
