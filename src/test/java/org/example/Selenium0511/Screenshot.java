@@ -59,6 +59,19 @@ public class Screenshot {
 
 
 
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("")));
+        element.click();
+
+
+
+        WebDriverWait wait2 = new WebDriverWait(driver,Duration.ofSeconds(20));
+        WebElement el = wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("")));
+        el.click();
+
+
+
+
 
 
     }

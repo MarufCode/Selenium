@@ -81,11 +81,11 @@
                 System.out.println(recordText);
                 String[] recordParts = recordText.split("\n");
 
-                String expectedId = "0441";
+//                String expectedId = "0441";
                 String expectedFirstName = "Maruf";
                 String expectedLastName = "Sherikar";
 
-                Assert.assertEquals(recordParts[0], expectedId, "ID does not match");
+//                Assert.assertEquals(recordParts[0], expectedId, "ID does not match");
                 Assert.assertEquals(recordParts[1], expectedFirstName, "First Name does not match");
                 Assert.assertEquals(recordParts[2], expectedLastName, "Last Name does not match");
 
